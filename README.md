@@ -66,9 +66,18 @@ Note that the [PicoKey App](https://www.picokeys.com/picokeyapp/ "PicoKey App") 
 Before building, ensure you have installed the toolchain for the Pico and that the Pico SDK is properly located on your drive.
 
 ```sh
-git clone https://github.com/polhenarejos/pico-fido
-git submodule update --init --recursive
+git clone -b v7.2.1 https://github.com/aleytus/pico-fido
 cd pico-fido
+git submodule update --init --recursive
+build_pico_fido
+```
+
+or
+
+```sh
+git clone https://github.com/polhenarejos/pico-fido
+cd pico-fido
+git submodule update --init --recursive
 mkdir build
 cd build
 PICO_SDK_PATH=/path/to/pico-sdk cmake .. -DPICO_BOARD=board_type -DUSB_VID=0x1234 -DUSB_PID=0x5678
